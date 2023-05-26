@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="2_p3d7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ghq3"]
+size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_hmwl6")
@@ -12,4 +13,7 @@ script = ExtResource("1_hmwl6")
 shape = SubResource("RectangleShape2D_6ghq3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_p3d7h")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
