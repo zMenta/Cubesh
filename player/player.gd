@@ -1,9 +1,17 @@
 extends CharacterBody2D
 
+@export var current_weapon : Weapon
+@onready var animation := $AnimationPlayer
+
 const SPEED = 250
 const ACCELERATION = 30
 const FRICTION = 25
+
  
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("attack") and current_weapon != null:
+		animation.speed_scale = current_weapon.attack_speed_scale
+		animation.play(current_weapon.attack_type)
 
 func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")

@@ -6,7 +6,6 @@
 size = Vector2(6, 31)
 
 [node name="Spear" instance=ExtResource("1_jox80")]
-position = Vector2(0, 16)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, -0.5)

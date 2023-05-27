@@ -8,6 +8,7 @@ size = Vector2(6, 11)
 [node name="Dagger" instance=ExtResource("1_iqmij")]
 position = Vector2(0, 8)
 region_rect = Rect2(48, 0, 16, 16)
+attack_speed_scale = 3.0
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(0, -2.5)

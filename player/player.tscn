@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bxsrkofvoagxw" path="res://weapons/dagger.tscn" id="4_t081i"]
 [ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="5_ockq5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ghq3"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ia72d"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_0qvry"]
 resource_name = "thrust_attack"
@@ -103,7 +103,7 @@ _data = {
 script = ExtResource("1_hmwl6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_6ghq3")
+shape = SubResource("CircleShape2D_ia72d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
