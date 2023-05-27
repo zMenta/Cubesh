@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmqblje6fqvln"]
+[gd_scene load_steps=6 format=3 uid="uid://cmqblje6fqvln"]
 
+[ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="1_2x85q"]
 [ext_resource type="Script" path="res://weapons/weapon.gd" id="1_wnw8d"]
 [ext_resource type="Script" path="res://weapons/attack.gd" id="2_5bi1u"]
 
-[sub_resource type="Resource" id="Resource_6ohol"]
+[sub_resource type="Resource" id="Resource_0wfpn"]
 script = ExtResource("2_5bi1u")
 damage = 10
 knockback = 10
@@ -13,8 +14,12 @@ stun_time = 0.2
 size = Vector2(17, 15)
 
 [node name="Weapon" type="Sprite2D" node_paths=PackedStringArray("collision_area")]
+texture_filter = 1
+texture = ExtResource("1_2x85q")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 32)
 script = ExtResource("1_wnw8d")
-attack = SubResource("Resource_6ohol")
+attack = SubResource("Resource_0wfpn")
 collision_area = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
