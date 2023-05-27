@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmqblje6fqvln"]
+
+[ext_resource type="Script" path="res://weapons/weapon.gd" id="1_wnw8d"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="2_5bi1u"]
+
+[sub_resource type="Resource" id="Resource_6ohol"]
+script = ExtResource("2_5bi1u")
+damage = 10
+knockback = 10
+stun_time = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bey1k"]
+size = Vector2(17, 15)
+
+[node name="Weapon" type="Sprite2D" node_paths=PackedStringArray("collision_area")]
+script = ExtResource("1_wnw8d")
+attack = SubResource("Resource_6ohol")
+collision_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bey1k")
