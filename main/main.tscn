@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=4 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="PackedScene" uid="uid://0e13hwy3x5jo" path="res://maps/test_map.tscn" id="1_1eit0"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
+[ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="3_ejj0t"]
 
 [node name="Main" type="Node"]
 
@@ -11,3 +12,6 @@ texture_filter = 1
 [node name="Player" parent="TileMap" instance=ExtResource("1_khuke")]
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+
+[node name="Slime" parent="TileMap" instance=ExtResource("3_ejj0t")]
+position = Vector2(99, 30)

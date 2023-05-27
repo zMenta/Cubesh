@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://doa2egg8a8oi3"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_o47hr"]
+[ext_resource type="Script" path="res://common/components/component_health.gd" id="1_odc5l"]
+[ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="1_ts2nw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g08wa"]
+radius = 8.0
+
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_o47hr")
+
+[node name="ComponentHealth" type="Node" parent="."]
+script = ExtResource("1_odc5l")
+max_health = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g08wa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_ts2nw")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]
