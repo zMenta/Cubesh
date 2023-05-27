@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var current_weapon : Weapon
 @onready var animation := $AnimationPlayer
 
-const SPEED = 250
-const ACCELERATION = 30
+const SPEED = 150
+const ACCELERATION = 20
 const FRICTION = 25
 
  

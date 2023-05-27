@@ -99,8 +99,9 @@ _data = {
 "thrust_attack": SubResource("Animation_0qvry")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("current_weapon")]
 script = ExtResource("1_hmwl6")
+current_weapon = NodePath("WeaponSlot/Sword")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ia72d")
