@@ -118,12 +118,12 @@ position = Vector2(11, 13)
 rotation = -2.84136
 
 [node name="Spear" parent="WeaponSlot" instance=ExtResource("3_xg60j")]
+visible = false
 
 [node name="Dagger" parent="WeaponSlot" instance=ExtResource("4_t081i")]
 visible = false
 
 [node name="Sword" parent="WeaponSlot" instance=ExtResource("5_ockq5")]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

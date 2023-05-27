@@ -62,3 +62,7 @@ dodge={
 2d_physics/layer_2="creatures"
 2d_physics/layer_3="walls"
 2d_physics/layer_4="weapons"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0156863, 0.105882, 0.168627, 1)
