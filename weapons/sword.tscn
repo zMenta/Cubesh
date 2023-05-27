@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6g53qb86u43r"]
+
+[ext_resource type="PackedScene" uid="uid://cmqblje6fqvln" path="res://weapons/weapon.tscn" id="1_pcqxp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qweek"]
+size = Vector2(8, 22)
+
+[node name="Sword" instance=ExtResource("1_pcqxp")]
+position = Vector2(0, 12)
+region_rect = Rect2(32, 0, 16, 24)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qweek")

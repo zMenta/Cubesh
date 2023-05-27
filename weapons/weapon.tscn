@@ -12,6 +12,7 @@ stun_time = 0.2
 
 [node name="Weapon" type="Sprite2D" node_paths=PackedStringArray("collision_area")]
 texture_filter = 1
+position = Vector2(0, 16)
 texture = ExtResource("1_2x85q")
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 32)
