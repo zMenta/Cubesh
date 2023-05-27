@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=3 format=3 uid="uid://pupvaq8lygih"]
 
+[ext_resource type="PackedScene" uid="uid://0e13hwy3x5jo" path="res://maps/test_map.tscn" id="1_1eit0"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 
 [node name="Main" type="Node"]
 
-[node name="TestLevel" type="Node2D" parent="."]
+[node name="TileMap" parent="." instance=ExtResource("1_1eit0")]
+texture_filter = 1
 
-[node name="Player" parent="TestLevel" instance=ExtResource("1_khuke")]
-position = Vector2(320, 176)
+[node name="Player" parent="TileMap" instance=ExtResource("1_khuke")]
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
