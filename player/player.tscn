@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7easjs18gum6"]
+[gd_scene load_steps=10 format=3 uid="uid://c7easjs18gum6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hmwl6"]
+[ext_resource type="Script" path="res://common/components/component_health.gd" id="2_l0m5d"]
 [ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="2_p3d7h"]
-[ext_resource type="PackedScene" uid="uid://enb2cglwjek0" path="res://weapons/spear.tscn" id="3_xg60j"]
-[ext_resource type="PackedScene" uid="uid://bxsrkofvoagxw" path="res://weapons/dagger.tscn" id="4_t081i"]
 [ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="5_ockq5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ia72d"]
@@ -35,6 +34,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [-2.84136, -1.65087, -1.58385, -1.58385, -1.58385, -2.84136]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.65, 0.85),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_enable_weapon_collision"
+}, {
+"args": [],
+"method": &"_disable_weapon_collision"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_a2rio"]
@@ -91,6 +107,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [-2.84136, -3.60374, -0.609217, -0.976319, -0.976319, -2.84136]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.23, 0.307054),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_enable_weapon_collision"
+}, {
+"args": [],
+"method": &"_disable_weapon_collision"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g8hwb"]
 _data = {
@@ -104,6 +137,9 @@ collision_mask = 14
 script = ExtResource("1_hmwl6")
 current_weapon = NodePath("WeaponSlot/Sword")
 
+[node name="ComponentHealth" type="Node" parent="."]
+script = ExtResource("2_l0m5d")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ia72d")
 
@@ -116,12 +152,6 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="WeaponSlot" type="Node2D" parent="."]
 position = Vector2(11, 13)
 rotation = -2.84136
-
-[node name="Spear" parent="WeaponSlot" instance=ExtResource("3_xg60j")]
-visible = false
-
-[node name="Dagger" parent="WeaponSlot" instance=ExtResource("4_t081i")]
-visible = false
 
 [node name="Sword" parent="WeaponSlot" instance=ExtResource("5_ockq5")]
 

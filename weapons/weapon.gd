@@ -13,3 +13,7 @@ func enable_collision() -> void:
 
 func disable_collision() -> void:
 	collision_area.monitoring = false
+
+
+func _on_area_2d_body_entered(body:Node2D) -> void:
+	print(body)

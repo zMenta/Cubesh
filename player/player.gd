@@ -24,3 +24,14 @@ func _physics_process(_delta: float) -> void:
 
 	look_at(get_global_mouse_position())
 	move_and_slide()
+
+
+func _enable_weapon_collision() -> void:
+	if not current_weapon is Weapon:
+		return
+	current_weapon.enable_collision()
+
+func _disable_weapon_collision() -> void:
+	if not current_weapon is Weapon:
+		return
+	current_weapon.disable_collision()
