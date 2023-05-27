@@ -15,6 +15,8 @@ func disable_collision() -> void:
 	collision_area.monitoring = false
 
 
+# It will probably improve the code by passing the whole Attack var, so on the other end (the entity being hit)
+# handles taking the damage, stun_time and knockback.
 func _on_area_2d_body_entered(body:Node2D) -> void:
 	if body.has_node("ComponentHealth"):
 		var health : ComponentHealth = body.get_node("ComponentHealth")
