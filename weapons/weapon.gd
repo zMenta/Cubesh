@@ -1,7 +1,7 @@
 extends Sprite2D
 class_name  Weapon
 
-@export var attack := Attack.new()
+@export var attack : Attack
 @export var collision_area := Area2D
 
 
