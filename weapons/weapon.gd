@@ -16,4 +16,6 @@ func disable_collision() -> void:
 
 
 func _on_area_2d_body_entered(body:Node2D) -> void:
-	print(body)
+	if body.has_node("ComponentHealth"):
+		var health : ComponentHealth = body.get_node("ComponentHealth")
+		health.take_damage(attack.damage)
