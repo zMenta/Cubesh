@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 		animation.speed_scale = current_weapon.attack_speed_scale
 		animation.play(current_weapon.attack_type)
 
+
 func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = Input.get_vector("left", "right", "up", "down")
 	if direction != Vector2():
