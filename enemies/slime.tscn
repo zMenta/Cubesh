@@ -14,7 +14,6 @@ script = ExtResource("1_o47hr")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("1_odc5l")
-max_health = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g08wa")
@@ -25,4 +24,5 @@ texture = ExtResource("1_ts2nw")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
+[connection signal="damage_taken" from="ComponentHealth" to="." method="_on_component_health_damage_taken"]
 [connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]
