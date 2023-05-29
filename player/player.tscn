@@ -140,6 +140,7 @@ current_weapon = NodePath("WeaponSlot/Dagger")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("2_l0m5d")
+max_health = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ia72d")
