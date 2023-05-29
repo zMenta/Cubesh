@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxsrkofvoagxw"]
+[gd_scene load_steps=5 format=3 uid="uid://bxsrkofvoagxw"]
 
 [ext_resource type="PackedScene" uid="uid://cmqblje6fqvln" path="res://weapons/weapon.tscn" id="1_iqmij"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="2_18mpn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb6r8"]
+[sub_resource type="Resource" id="Resource_5hjqp"]
+script = ExtResource("2_18mpn")
+damage = 10
+knockback = 10
+stun_time = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi5sa"]
 size = Vector2(6, 11)
 
 [node name="Dagger" instance=ExtResource("1_iqmij")]
@@ -10,6 +17,9 @@ position = Vector2(0, 8)
 region_rect = Rect2(48, 0, 16, 16)
 attack_speed_scale = 3.0
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="ComponentHurtbox" parent="." index="0"]
+attack = SubResource("Resource_5hjqp")
+
+[node name="CollisionShape2D" parent="ComponentHurtbox" index="0"]
 position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_nb6r8")
+shape = SubResource("RectangleShape2D_gi5sa")

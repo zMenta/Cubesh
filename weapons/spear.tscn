@@ -1,13 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://enb2cglwjek0"]
+[gd_scene load_steps=5 format=3 uid="uid://enb2cglwjek0"]
 
 [ext_resource type="PackedScene" uid="uid://cmqblje6fqvln" path="res://weapons/weapon.tscn" id="1_jox80"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="2_dw4x5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsy6r"]
+[sub_resource type="Resource" id="Resource_md25g"]
+script = ExtResource("2_dw4x5")
+damage = 10
+knockback = 10
+stun_time = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mx6gp"]
 size = Vector2(6, 31)
 
 [node name="Spear" instance=ExtResource("1_jox80")]
 attack_speed_scale = 1.2
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="ComponentHurtbox" parent="." index="0"]
+attack = SubResource("Resource_md25g")
+
+[node name="CollisionShape2D" parent="ComponentHurtbox" index="0"]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_dsy6r")
+shape = SubResource("RectangleShape2D_mx6gp")

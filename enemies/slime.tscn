@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://doa2egg8a8oi3"]
+[gd_scene load_steps=13 format=3 uid="uid://doa2egg8a8oi3"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_o47hr"]
 [ext_resource type="Script" path="res://common/components/component_health.gd" id="1_odc5l"]
 [ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="1_ts2nw"]
+[ext_resource type="Script" path="res://common/components/component_hurtbox.gd" id="4_rubbl"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="5_sfk8t"]
+[ext_resource type="Script" path="res://common/components/component_hitbox.gd" id="6_uyx84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g08wa"]
 radius = 8.0
@@ -97,13 +100,20 @@ _data = {
 "attack": SubResource("Animation_n501y")
 }
 
+[sub_resource type="Resource" id="Resource_6gu3b"]
+script = ExtResource("5_sfk8t")
+damage = 10
+knockback = 10
+stun_time = 0.2
+
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 14
+collision_mask = 6
 script = ExtResource("1_o47hr")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("1_odc5l")
+max_health = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g08wa")
@@ -126,8 +136,27 @@ libraries = {
 }
 
 [node name="AttackCooldown" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
+
+[node name="ComponentHurtbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("4_rubbl")
+attack = SubResource("Resource_6gu3b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ComponentHurtbox"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_g08wa")
+
+[node name="ComponentHitbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("6_uyx84")
+health = NodePath("../ComponentHealth")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ComponentHitbox"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_g08wa")
 
 [connection signal="damage_taken" from="ComponentHealth" to="." method="_on_component_health_damage_taken"]
 [connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]

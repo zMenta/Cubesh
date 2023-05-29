@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_hmwl6"]
 [ext_resource type="Script" path="res://common/components/component_health.gd" id="2_l0m5d"]
 [ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="2_p3d7h"]
-[ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="5_ockq5"]
+[ext_resource type="PackedScene" uid="uid://bxsrkofvoagxw" path="res://weapons/dagger.tscn" id="4_1yaic"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ia72d"]
 radius = 8.0
@@ -133,9 +133,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("current_weapon")]
-collision_mask = 12
+collision_mask = 6
 script = ExtResource("1_hmwl6")
-current_weapon = NodePath("WeaponSlot/Sword")
+current_weapon = NodePath("WeaponSlot/Dagger")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("2_l0m5d")
@@ -153,7 +153,7 @@ region_rect = Rect2(0, 0, 16, 16)
 position = Vector2(11, 13)
 rotation = -2.84136
 
-[node name="Sword" parent="WeaponSlot" instance=ExtResource("5_ockq5")]
+[node name="Dagger" parent="WeaponSlot" instance=ExtResource("4_1yaic")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
