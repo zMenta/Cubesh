@@ -147,6 +147,7 @@ attack = SubResource("Resource_6gu3b")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ComponentHurtbox"]
 scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_g08wa")
+disabled = true
 
 [node name="ComponentHitbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
 collision_layer = 2

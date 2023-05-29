@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-var target : Node2D
 
 const SPEED = 10
 const ACCELERATION = 2
 const FRICTION = 10
 const DASH_SPEED = 230
+
+var target : Node2D
+@onready var hurtbox_shape : CollisionShape2D = $ComponentHurtbox/CollisionShape2D2
 
 func _physics_process(_delta: float) -> void:
 	if target == null:
@@ -28,9 +30,14 @@ func _dash() -> void:
 	if target == null:
 		return
 
+	hurtbox_shape.disabled = false
+	var timer = get_tree().create_timer(0.7)
 	var direction = global_position.direction_to(target.global_position)
 	velocity.x = move_toward(velocity.x, direction.x * DASH_SPEED, DASH_SPEED)
 	velocity.y = move_toward(velocity.y, direction.y * DASH_SPEED, DASH_SPEED)
+	await timer.timeout
+	hurtbox_shape.disabled = true
+
 
 
 func _on_detection_zone_body_entered(body:Node2D) -> void:
