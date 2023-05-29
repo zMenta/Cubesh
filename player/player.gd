@@ -46,3 +46,7 @@ func _disable_weapon_collision() -> void:
 	if not current_weapon is Weapon:
 		return
 	current_weapon.disable_collision()
+
+
+func _on_component_health_died() -> void:
+	print("died")

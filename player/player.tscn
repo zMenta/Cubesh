@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7easjs18gum6"]
+[gd_scene load_steps=11 format=3 uid="uid://c7easjs18gum6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hmwl6"]
 [ext_resource type="Script" path="res://common/components/component_health.gd" id="2_l0m5d"]
 [ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="2_p3d7h"]
 [ext_resource type="PackedScene" uid="uid://bxsrkofvoagxw" path="res://weapons/dagger.tscn" id="4_1yaic"]
+[ext_resource type="Script" path="res://common/components/component_hitbox.gd" id="5_72g3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ia72d"]
-radius = 8.0
+radius = 8.5
 
 [sub_resource type="Animation" id="Animation_a2rio"]
 length = 0.001
@@ -159,3 +160,13 @@ rotation = -2.84136
 libraries = {
 "": SubResource("AnimationLibrary_g8hwb")
 }
+
+[node name="ComponentHitbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+collision_mask = 2
+script = ExtResource("5_72g3u")
+health = NodePath("../ComponentHealth")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ComponentHitbox"]
+shape = SubResource("CircleShape2D_ia72d")
+
+[connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]

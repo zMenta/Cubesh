@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://common/components/component_hitbox.gd" id="6_uyx84"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g08wa"]
-radius = 8.0
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_615ad"]
 radius = 140.0
@@ -158,7 +158,6 @@ health = NodePath("../ComponentHealth")
 scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_g08wa")
 
-[connection signal="damage_taken" from="ComponentHealth" to="." method="_on_component_health_damage_taken"]
 [connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]
 [connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="." method="_on_detection_zone_body_exited"]
