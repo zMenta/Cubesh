@@ -10,5 +10,5 @@ z_index = -5
 texture_filter = 1
 texture = ExtResource("1_db00g")
 region_enabled = true
-region_rect = Rect2(16, 64, 16, 16)
+region_rect = Rect2(64, 64, 16, 16)
 script = ExtResource("2_nkase")

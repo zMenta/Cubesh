@@ -16,12 +16,12 @@ texture_filter = 1
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 
 [node name="Slime" parent="TileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(99, 30)
+position = Vector2(95, -65)
 
 [node name="Slime2" parent="TileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(-5, 50)
+position = Vector2(419, 46)
 rotation = 3.12221
 
 [node name="Slime3" parent="TileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(38, -47)
+position = Vector2(297, 240)
 rotation = 4.73835

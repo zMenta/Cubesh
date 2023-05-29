@@ -34,7 +34,6 @@ func _physics_process(_delta: float) -> void:
 func _dash(direction: Vector2) -> void:
 	velocity.x = move_toward(velocity.x, direction.x * DASH_SPEED, DASH_SPEED)
 	velocity.y = move_toward(velocity.y, direction.y * DASH_SPEED, DASH_SPEED)
-	
 
 
 func _enable_weapon_collision() -> void:

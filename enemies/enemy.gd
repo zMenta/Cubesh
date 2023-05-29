@@ -1,10 +1,25 @@
 extends CharacterBody2D
 
-var blood: PackedScene
+@onready var blood: PackedScene = preload("res://common/blood/blood.tscn")
 
+var target : Node2D
 
-func _ready() -> void:
-	blood = preload("res://common/blood/blood.tscn")
+const SPEED = 10
+const ACCELERATION = 2
+const FRICTION = 10
+const DASH_SPEED = 230
+
+func _physics_process(_delta: float) -> void:
+	if target == null:
+		velocity.x = move_toward(velocity.x, 0, FRICTION)
+		velocity.y = move_toward(velocity.y, 0, FRICTION)
+		return
+
+	look_at(target.global_position)
+	var direction = global_position.direction_to(target.global_position)
+	velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
+	velocity.y = move_toward(velocity.y, direction.y * SPEED, ACCELERATION)
+	move_and_slide()
 
 
 func _on_component_health_died() -> void:
@@ -16,3 +31,28 @@ func _on_component_health_damage_taken() -> void:
 	new_blood.global_position = global_position
 	new_blood.rotation = rotation + deg_to_rad(randf_range(-40, 40))
 	Gamestate.add_node_to_world.emit(new_blood)
+
+
+func _dash() -> void:
+	if target == null:
+		return
+
+	var direction = global_position.direction_to(target.global_position)
+	velocity.x = move_toward(velocity.x, direction.x * DASH_SPEED, DASH_SPEED)
+	velocity.y = move_toward(velocity.y, direction.y * DASH_SPEED, DASH_SPEED)
+
+
+func _on_detection_zone_body_entered(body:Node2D) -> void:
+	target = body
+	$AttackCooldown.start()
+
+
+func _on_detection_zone_body_exited(body: Node2D) -> void:
+	if target == body:
+		target = null
+
+
+func _on_attack_cooldown_timeout() -> void:
+	$AnimationPlayer.play("attack")
+	if target != null:
+		$AttackCooldown.start()
