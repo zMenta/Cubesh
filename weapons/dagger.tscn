@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_5hjqp"]
 script = ExtResource("2_18mpn")
 damage = 6
-knockback = 10
+knockback = 25
 stun_time = 0.2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi5sa"]

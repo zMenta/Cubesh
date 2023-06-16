@@ -2,6 +2,7 @@ extends Node
 class_name ComponentHealth
 
 signal died
+signal attack_received(attack: Attack)
 
 @export var create_blood_on_hit : bool = true
 @export var max_health : int = 100
@@ -9,9 +10,10 @@ signal died
 @onready var blood: PackedScene = preload("res://common/blood/blood.tscn")
 
 
-func take_damage(value: int) -> void:
+func take_damage(attack: Attack) -> void:
+	attack_received.emit(attack)
 	_create_damage_taken_effect()
-	current_health = clampi(current_health - value, 0, max_health)
+	current_health = clampi(current_health - attack.damage, 0, max_health)
 	if current_health <= 0:
 		died.emit()
 

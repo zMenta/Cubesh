@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 10
 const ACCELERATION = 2
 const FRICTION = 10
@@ -20,10 +19,6 @@ func _physics_process(_delta: float) -> void:
 	velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
 	velocity.y = move_toward(velocity.y, direction.y * SPEED, ACCELERATION)
 	move_and_slide()
-
-
-func _on_component_health_died() -> void:
-	queue_free()
 
 
 func _dash() -> void:
@@ -54,3 +49,15 @@ func _on_attack_cooldown_timeout() -> void:
 	$AnimationPlayer.play("attack")
 	if target != null:
 		$AttackCooldown.start()
+
+
+func _on_component_health_died() -> void:
+	queue_free()
+
+
+func _on_component_health_attack_received(attack) -> void:
+	var knockback_accel = 100
+	var direction = global_position.direction_to(target.global_position) * -1
+	velocity.x = move_toward(velocity.x, direction.x * attack.knockback, knockback_accel)
+	velocity.y = move_toward(velocity.y, direction.y * attack.knockback, knockback_accel)
+
