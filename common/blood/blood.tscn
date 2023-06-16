@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c402yf8ffro30"]
 
-[ext_resource type="Texture2D" uid="uid://by6stwb2lv712" path="res://common/assets.png" id="1_db00g"]
+[ext_resource type="Texture2D" uid="uid://djmif1cdtrbmq" path="res://common/assets.png" id="1_db00g"]
 [ext_resource type="Script" path="res://common/blood/blood.gd" id="2_nkase"]
 
 [node name="Node2D" type="Node2D"]
