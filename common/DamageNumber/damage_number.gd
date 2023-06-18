@@ -17,6 +17,7 @@ func _ready():
 	tween.parallel().tween_property(self, "scale", Vector2(1.2, 1.2), tween_time)
 	tween.tween_property(self, "position", new_position + Vector2(0, 5), tween_time*2)
 	tween.parallel().tween_property(self, "scale", Vector2(0.9, 0.8), tween_time)
+	tween.parallel().tween_property(self, "modulate", Color(1,1,1,0), tween_time*2) # Color(1,1,1,0) = white with alpha equal to 0
 	tween.tween_callback(queue_free)
 
 
