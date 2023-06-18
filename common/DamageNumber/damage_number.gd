@@ -20,4 +20,3 @@ func _ready():
 	tween.parallel().tween_property(self, "modulate", Color(1,1,1,0), tween_time*2) # Color(1,1,1,0) = white with alpha equal to 0
 	tween.tween_callback(queue_free)
 
-
