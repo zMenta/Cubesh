@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmd832sitgibv"]
+
+[ext_resource type="Script" path="res://common/DamageNumber/damage_number.gd" id="1_che05"]
+
+[node name="Label" type="Label"]
+top_level = true
+z_index = 12
+offset_left = -33.0
+offset_top = -38.0
+offset_right = -22.0
+offset_bottom = -12.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 10
+text = "6"
+script = ExtResource("1_che05")
