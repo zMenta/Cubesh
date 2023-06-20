@@ -8,20 +8,22 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
 
-[node name="TileMap" parent="." instance=ExtResource("1_1eit0")]
+[node name="Map" type="Node2D" parent="."]
+
+[node name="TileMap" parent="Map" instance=ExtResource("1_1eit0")]
 texture_filter = 1
 
-[node name="Player" parent="TileMap" instance=ExtResource("1_khuke")]
+[node name="Player" parent="Map/TileMap" instance=ExtResource("1_khuke")]
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+[node name="Camera2D" type="Camera2D" parent="Map/TileMap/Player"]
 
-[node name="Slime" parent="TileMap" instance=ExtResource("3_ejj0t")]
+[node name="Slime" parent="Map/TileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(95, -65)
 
-[node name="Slime2" parent="TileMap" instance=ExtResource("3_ejj0t")]
+[node name="Slime2" parent="Map/TileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(419, 46)
 rotation = 3.12221
 
-[node name="Slime3" parent="TileMap" instance=ExtResource("3_ejj0t")]
+[node name="Slime3" parent="Map/TileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(297, 240)
 rotation = 4.73835

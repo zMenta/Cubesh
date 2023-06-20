@@ -1,6 +1,6 @@
 extends Node
 
-@onready var map := $TileMap
+@onready var map := $Map
 
 
 func _ready() -> void:
