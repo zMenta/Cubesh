@@ -15,8 +15,6 @@ texture_filter = 1
 
 [node name="Player" parent="Map/TileMap" instance=ExtResource("1_khuke")]
 
-[node name="Camera2D" type="Camera2D" parent="Map/TileMap/Player"]
-
 [node name="Slime" parent="Map/TileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(95, -65)
 
