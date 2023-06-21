@@ -6,8 +6,14 @@ signal interacted
 @export var tooltip_text : String = "tooltip"
 var can_interact := false
 
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+
+
 func _on_body_entered(_body:Node2D) -> void:
-	Gamestate.update_tooltip.emit("exit level")
+	Gamestate.update_tooltip.emit(tooltip_text)
 	can_interact = true
 
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=7 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
 [ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="3_ejj0t"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
+[ext_resource type="PackedScene" uid="uid://2v8odbjiw3vl" path="res://maps/props/map_exit/map_exit.tscn" id="5_pauny"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
@@ -50,6 +51,9 @@ position = Vector2(129, 74)
 remote_path = NodePath("../../../ui")
 update_rotation = false
 update_scale = false
+
+[node name="Sprite2D" parent="Map" instance=ExtResource("5_pauny")]
+position = Vector2(217, 162)
 
 [node name="ui" type="Node2D" parent="."]
 position = Vector2(129, 74)
