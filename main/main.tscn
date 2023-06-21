@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
 [ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="3_ejj0t"]
-[ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip.tscn" id="5_p63od"]
+[ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
@@ -12,14 +12,6 @@ script = ExtResource("1_df2tq")
 [node name="Map" type="Node2D" parent="."]
 
 [node name="BaseTileMap" parent="Map" instance=ExtResource("2_r367f")]
-
-[node name="Player" parent="Map/BaseTileMap" instance=ExtResource("1_khuke")]
-position = Vector2(129, 74)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Map/BaseTileMap/Player"]
-remote_path = NodePath("../../../../ui")
-update_rotation = false
-update_scale = false
 
 [node name="Slime" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(640, 105)
@@ -50,6 +42,14 @@ rotation = -1.54484
 [node name="Slime8" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(549, 251)
 rotation = -1.54484
+
+[node name="Player" parent="Map" instance=ExtResource("1_khuke")]
+position = Vector2(129, 74)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Map/Player"]
+remote_path = NodePath("../../../ui")
+update_rotation = false
+update_scale = false
 
 [node name="ui" type="Node2D" parent="."]
 position = Vector2(129, 74)
