@@ -1,5 +1,9 @@
 extends Area2D
+class_name InteractableArea
 
+signal interacted
+
+@export var tooltip_text : String = "tooltip"
 var can_interact := false
 
 func _on_body_entered(_body:Node2D) -> void:
@@ -14,5 +18,5 @@ func _on_body_exited(_body:Node2D) -> void:
 
 func _unhandled_key_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") and can_interact:
-		print("player interaction")
+		interacted.emit()
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://2v8odbjiw3vl"]
 
 [ext_resource type="Texture2D" uid="uid://djmif1cdtrbmq" path="res://common/assets.png" id="1_3n6o3"]
-[ext_resource type="Script" path="res://maps/props/map_exit.gd" id="1_kn772"]
+[ext_resource type="Script" path="res://maps/props/interactable_area.gd" id="1_ih760"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cg13s"]
 size = Vector2(16, 16)
 
 [node name="MapExit" type="Area2D"]
 collision_layer = 16
-script = ExtResource("1_kn772")
+script = ExtResource("1_ih760")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cg13s")

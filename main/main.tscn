@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=6 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
 [ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="3_ejj0t"]
-[ext_resource type="PackedScene" uid="uid://2v8odbjiw3vl" path="res://maps/props/map_exit.tscn" id="4_mf27l"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 
 [node name="Main" type="Node"]
@@ -43,9 +42,6 @@ rotation = -1.54484
 [node name="Slime8" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
 position = Vector2(549, 251)
 rotation = -1.54484
-
-[node name="MapExit" parent="Map/BaseTileMap" instance=ExtResource("4_mf27l")]
-position = Vector2(280, 157)
 
 [node name="Player" parent="Map" instance=ExtResource("1_khuke")]
 position = Vector2(129, 74)
