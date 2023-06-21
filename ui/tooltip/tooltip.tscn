@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://ui/tooltip/tooltip.gd" id="1_yuoje"]
 
 [node name="Tooltip" type="Label"]
+visible = false
 z_index = 20
 offset_left = 268.0
 offset_top = 167.0
