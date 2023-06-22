@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://2v8odbjiw3vl"]
+
+[ext_resource type="Texture2D" uid="uid://djmif1cdtrbmq" path="res://common/assets.png" id="1_kphh7"]
+[ext_resource type="Script" path="res://maps/props/map_exit/map_exit.gd" id="2_0jcx7"]
+[ext_resource type="Script" path="res://maps/props/interactable_area.gd" id="2_f50g1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gb53"]
+size = Vector2(16, 16)
+
+[node name="MapExit" type="Sprite2D"]
+modulate = Color(0.545098, 0.235294, 0.733333, 1)
+texture_filter = 1
+texture = ExtResource("1_kphh7")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("2_0jcx7")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+script = ExtResource("2_f50g1")
+tooltip_text = "enter the portal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("RectangleShape2D_5gb53")
+
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]

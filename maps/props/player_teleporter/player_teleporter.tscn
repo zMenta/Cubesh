@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dldmj136mftgd"]
+
+[ext_resource type="Script" path="res://maps/props/player_teleporter/player_teleporter.gd" id="1_rylap"]
+
+[node name="PlayerTeleporter" type="Marker2D"]
+gizmo_extents = 16.0
+script = ExtResource("1_rylap")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -7.0
+offset_right = 18.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 8
+text = "Pspawn"

@@ -8,6 +8,9 @@ const ACCELERATION = 20
 const FRICTION = 25
 const DASH_SPEED = 450
 
+func _ready() -> void:
+	Gamestate.teleport_player.connect(func(new_pos): global_position = new_pos) 
+
  
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and current_weapon != null:

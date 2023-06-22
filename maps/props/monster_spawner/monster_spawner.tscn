@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgeuskoeq4st3"]
+
+[ext_resource type="Script" path="res://maps/props/monster_spawner/monster_spawner.gd" id="1_vtao8"]
+[ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="2_6k2sg"]
+
+[node name="MonsterSpawner" type="Marker2D"]
+gizmo_extents = 16.0
+script = ExtResource("1_vtao8")
+monster = ExtResource("2_6k2sg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -15.0
+offset_top = -6.0
+offset_right = 25.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 8
+text = "Monster"

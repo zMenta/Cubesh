@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://be6lbg8oclykt"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://be6lbg8oclykt"]
 
 [ext_resource type="Texture2D" uid="uid://djmif1cdtrbmq" path="res://common/assets.png" id="1_8ok2m"]
+[ext_resource type="PackedScene" uid="uid://dldmj136mftgd" path="res://maps/props/player_teleporter/player_teleporter.tscn" id="2_whwjs"]
+[ext_resource type="PackedScene" uid="uid://bgeuskoeq4st3" path="res://maps/props/monster_spawner/monster_spawner.tscn" id="3_bcxk7"]
+[ext_resource type="PackedScene" uid="uid://2v8odbjiw3vl" path="res://maps/props/map_exit/map_exit.tscn" id="4_gdgk1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4je8h"]
 texture = ExtResource("1_8ok2m")
@@ -28,7 +31,13 @@ texture = ExtResource("1_8ok2m")
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_s125j"]
+scenes/1/scene = ExtResource("2_whwjs")
+scenes/2/scene = ExtResource("3_bcxk7")
+scenes/3/scene = ExtResource("4_gdgk1")
+
 [resource]
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_4je8h")
+sources/1 = SubResource("TileSetScenesCollectionSource_s125j")

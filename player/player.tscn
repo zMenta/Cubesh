@@ -170,4 +170,6 @@ health = NodePath("../ComponentHealth")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ComponentHitbox"]
 shape = SubResource("CircleShape2D_ia72d")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]

@@ -1,27 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=6 format=3 uid="uid://pupvaq8lygih"]
 
-[ext_resource type="PackedScene" uid="uid://0e13hwy3x5jo" path="res://maps/test_map.tscn" id="1_1eit0"]
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
-[ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="3_ejj0t"]
+[ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
+[ext_resource type="PackedScene" uid="uid://0e13hwy3x5jo" path="res://maps/test_map.tscn" id="3_0l7pp"]
+[ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
+map_pool = Array[PackedScene]([ExtResource("2_r367f"), ExtResource("3_0l7pp")])
 
-[node name="TileMap" parent="." instance=ExtResource("1_1eit0")]
-texture_filter = 1
+[node name="Map" type="Node2D" parent="."]
 
-[node name="Player" parent="TileMap" instance=ExtResource("1_khuke")]
+[node name="BaseTileMap" parent="Map" instance=ExtResource("2_r367f")]
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+[node name="Player" parent="." instance=ExtResource("1_khuke")]
 
-[node name="Slime" parent="TileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(95, -65)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../ui")
+update_rotation = false
+update_scale = false
 
-[node name="Slime2" parent="TileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(419, 46)
-rotation = 3.12221
+[node name="ui" type="Node2D" parent="."]
 
-[node name="Slime3" parent="TileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(297, 240)
-rotation = 4.73835
+[node name="Tooltip" parent="ui" instance=ExtResource("5_p63od")]
+offset_left = -48.0
+offset_top = 13.0
+offset_right = 97.0
+offset_bottom = 39.0
