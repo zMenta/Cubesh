@@ -45,7 +45,6 @@ position = Vector2(549, 251)
 rotation = -1.54484
 
 [node name="Player" parent="Map" instance=ExtResource("1_khuke")]
-position = Vector2(129, 74)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Map/Player"]
 remote_path = NodePath("../../../ui")
@@ -56,7 +55,6 @@ update_scale = false
 position = Vector2(217, 162)
 
 [node name="ui" type="Node2D" parent="."]
-position = Vector2(129, 74)
 
 [node name="Tooltip" parent="ui" instance=ExtResource("5_p63od")]
 offset_left = -48.0
