@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gb53"]
 size = Vector2(16, 16)
 
-[node name="Sprite2D" type="Sprite2D"]
+[node name="MapExit" type="Sprite2D"]
 modulate = Color(0.545098, 0.235294, 0.733333, 1)
 texture_filter = 1
 texture = ExtResource("1_kphh7")
