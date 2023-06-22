@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=6 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
-[ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="3_ejj0t"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 [ext_resource type="PackedScene" uid="uid://2v8odbjiw3vl" path="res://maps/props/map_exit/map_exit.tscn" id="5_pauny"]
 
@@ -13,36 +12,6 @@ script = ExtResource("1_df2tq")
 [node name="Map" type="Node2D" parent="."]
 
 [node name="BaseTileMap" parent="Map" instance=ExtResource("2_r367f")]
-
-[node name="Slime" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(640, 105)
-
-[node name="Slime4" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(635, 319)
-
-[node name="Slime2" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(411, 104)
-rotation = 3.12221
-
-[node name="Slime3" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(188, 308)
-rotation = -1.54484
-
-[node name="Slime5" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(354, 235)
-rotation = -1.54484
-
-[node name="Slime6" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(487, 355)
-rotation = -1.54484
-
-[node name="Slime7" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(244, 107)
-rotation = -1.54484
-
-[node name="Slime8" parent="Map/BaseTileMap" instance=ExtResource("3_ejj0t")]
-position = Vector2(549, 251)
-rotation = -1.54484
 
 [node name="Player" parent="Map" instance=ExtResource("1_khuke")]
 
