@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var current_weapon : Weapon
 @onready var animation := $AnimationPlayer
+@onready var weapon_slot := $WeaponSlot
 
 const SPEED = 150
 const ACCELERATION = 20
@@ -10,6 +11,7 @@ const DASH_SPEED = 450
 
 func _ready() -> void:
 	Gamestate.teleport_player.connect(func(new_pos): global_position = new_pos) 
+	Gamestate.weapon_pickup.connect(_pickup_weapon)
 
  
 func _process(_delta: float) -> void:
@@ -53,3 +55,18 @@ func _disable_weapon_collision() -> void:
 
 func _on_component_health_died() -> void:
 	print("died")
+
+
+func _pickup_weapon(new_weapon: Weapon) -> void:
+	if current_weapon != null:
+		var item_drop = preload("res://maps/props/item_drop/item_drop.tscn").instantiate()
+		item_drop.weapon = current_weapon.duplicate()
+		item_drop.global_position = global_position
+		Gamestate.add_node_to_world.emit(item_drop)
+
+	for child in weapon_slot.get_children():
+		child.queue_free()
+
+	current_weapon = new_weapon
+	weapon_slot.add_child(current_weapon)
+	

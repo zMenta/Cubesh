@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7easjs18gum6"]
+[gd_scene load_steps=10 format=3 uid="uid://c7easjs18gum6"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_hmwl6"]
 [ext_resource type="Script" path="res://common/components/component_health.gd" id="2_l0m5d"]
 [ext_resource type="Texture2D" uid="uid://djmif1cdtrbmq" path="res://common/assets.png" id="2_p3d7h"]
-[ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="4_n1gm4"]
 [ext_resource type="Script" path="res://common/components/component_hitbox.gd" id="5_72g3u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ia72d"]
@@ -133,10 +132,9 @@ _data = {
 "thrust_attack": SubResource("Animation_0qvry")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("current_weapon")]
+[node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_hmwl6")
-current_weapon = NodePath("WeaponSlot/Sword")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("2_l0m5d")
@@ -154,8 +152,6 @@ region_rect = Rect2(0, 0, 16, 16)
 [node name="WeaponSlot" type="Node2D" parent="."]
 position = Vector2(11, 13)
 rotation = -2.84136
-
-[node name="Sword" parent="WeaponSlot" instance=ExtResource("4_n1gm4")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

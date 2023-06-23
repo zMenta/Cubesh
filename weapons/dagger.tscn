@@ -15,7 +15,7 @@ size = Vector2(6, 11)
 [node name="Dagger" instance=ExtResource("1_iqmij")]
 position = Vector2(0, 8)
 region_rect = Rect2(48, 0, 16, 16)
-attack_speed_scale = 3.0
+attack_speed_scale = 2.5
 
 [node name="ComponentHurtbox" parent="." index="0"]
 attack = SubResource("Resource_5hjqp")

@@ -3,7 +3,8 @@ class_name  Weapon
 
 @export_enum("thrust_attack", "swing_attack") var attack_type = "thrust_attack"
 @export var attack_speed_scale : float = 1
-@export var hurtbox_shape := CollisionShape2D
+
+@onready var hurtbox_shape : CollisionShape2D = $ComponentHurtbox/CollisionShape2D
 
 
 func enable_collision() -> void:
