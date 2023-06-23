@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c88pjy86wrme1"]
+
+[ext_resource type="Script" path="res://maps/props/item_drop/item_drop.gd" id="1_qbilp"]
+[ext_resource type="Script" path="res://maps/props/interactable_area.gd" id="1_xwrii"]
+[ext_resource type="PackedScene" uid="uid://bxsrkofvoagxw" path="res://weapons/dagger.tscn" id="2_evgk0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_endqx"]
+radius = 6.0
+
+[node name="ItemDrop" type="Node2D"]
+script = ExtResource("1_qbilp")
+weapon_scene = ExtResource("2_evgk0")
+
+[node name="InteractableArea" type="Area2D" parent="."]
+script = ExtResource("1_xwrii")
+tooltip_text = "pickup item"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
+shape = SubResource("CircleShape2D_endqx")
+
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]
