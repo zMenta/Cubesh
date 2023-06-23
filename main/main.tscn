@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=7 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
 [ext_resource type="PackedScene" uid="uid://0e13hwy3x5jo" path="res://maps/test_map.tscn" id="3_0l7pp"]
+[ext_resource type="PackedScene" uid="uid://n1x31lge7o0j" path="res://maps/map_1_1.tscn" id="4_pw1q7"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 
 [node name="Main" type="Node"]
@@ -12,7 +13,7 @@ map_pool = Array[PackedScene]([ExtResource("2_r367f"), ExtResource("3_0l7pp")])
 
 [node name="Map" type="Node2D" parent="."]
 
-[node name="BaseTileMap" parent="Map" instance=ExtResource("2_r367f")]
+[node name="Map1_1" parent="Map" instance=ExtResource("4_pw1q7")]
 
 [node name="Player" parent="." instance=ExtResource("1_khuke")]
 
