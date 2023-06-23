@@ -5,8 +5,12 @@ const ACCELERATION = 2
 const FRICTION = 10
 const DASH_SPEED = 230
 
-var target : Node2D
+@export var on_detection_cooldown : float = 1.0
+@export var attack_cooldown : float = 3.0
+
 @onready var hurtbox_shape : CollisionShape2D = $ComponentHurtbox/CollisionShape2D2
+
+var target : Node2D
 
 func _physics_process(_delta: float) -> void:
 	if target == null:
@@ -37,7 +41,7 @@ func _dash() -> void:
 
 func _on_detection_zone_body_entered(body:Node2D) -> void:
 	target = body
-	$AttackCooldown.start()
+	$AttackCooldown.start(on_detection_cooldown)
 
 
 func _on_detection_zone_body_exited(body: Node2D) -> void:
@@ -48,7 +52,7 @@ func _on_detection_zone_body_exited(body: Node2D) -> void:
 func _on_attack_cooldown_timeout() -> void:
 	$AnimationPlayer.play("attack")
 	if target != null:
-		$AttackCooldown.start()
+		$AttackCooldown.start(attack_cooldown)
 
 
 func _on_component_health_died() -> void:
