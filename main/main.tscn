@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://crp5l2fn0pioe" path="res://maps/TestInheritedmap.tscn" id="2_r367f"]
-[ext_resource type="PackedScene" uid="uid://0e13hwy3x5jo" path="res://maps/test_map.tscn" id="3_0l7pp"]
+[ext_resource type="PackedScene" uid="uid://dru3fsdpoi7i4" path="res://maps/map_1_2.tscn" id="3_yc5l0"]
 [ext_resource type="PackedScene" uid="uid://n1x31lge7o0j" path="res://maps/map_1_1.tscn" id="4_pw1q7"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
-map_pool = Array[PackedScene]([ExtResource("2_r367f"), ExtResource("3_0l7pp")])
+map_pool = Array[PackedScene]([ExtResource("2_r367f"), ExtResource("3_yc5l0")])
 
 [node name="Map" type="Node2D" parent="."]
 
