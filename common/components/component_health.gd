@@ -20,6 +20,11 @@ func take_damage(attack: Attack) -> void:
 		died.emit()
 
 
+func restore(amount: int) -> void:
+	current_health = clampi(current_health + amount, 0, max_health)
+	_create_damage_number("+" + str(amount))
+
+
 func _create_damage_taken_effect() -> void:
 	if create_blood_on_hit == false:
 		return
