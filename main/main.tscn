@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=8 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dru3fsdpoi7i4" path="res://maps/map_1_2.tscn" id="3_yc5l0"]
 [ext_resource type="PackedScene" uid="uid://n1x31lge7o0j" path="res://maps/map_1_1.tscn" id="4_pw1q7"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
+[ext_resource type="PackedScene" uid="uid://d2wn6iebkg5fq" path="res://ui/status_bar/status_bar.tscn" id="6_yhdsn"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
@@ -17,15 +18,19 @@ map_pool = Array[PackedScene]([ExtResource("2_r367f"), ExtResource("3_yc5l0")])
 
 [node name="Player" parent="." instance=ExtResource("1_khuke")]
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../ui")
-update_rotation = false
-update_scale = false
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="ui" type="Node2D" parent="."]
+[node name="StatusBar" parent="UI" instance=ExtResource("6_yhdsn")]
 
-[node name="Tooltip" parent="ui" instance=ExtResource("5_p63od")]
-offset_left = -48.0
-offset_top = 13.0
-offset_right = 97.0
-offset_bottom = 39.0
+[node name="Tooltip" parent="UI" instance=ExtResource("5_p63od")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
