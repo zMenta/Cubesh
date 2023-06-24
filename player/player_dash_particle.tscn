@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhim2ad6ehmf"]
+
+[ext_resource type="Script" path="res://player/player_dash_particle.gd" id="1_ntrmu"]
+
+[sub_resource type="Curve" id="Curve_6qi5r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.993976, 0.436364), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mjh3e"]
+curve = SubResource("Curve_6qi5r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tfe1m"]
+emission_shape = 1
+emission_sphere_radius = 8.0
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = 60.63
+angular_velocity_max = 121.26
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 1.2
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_mjh3e")
+
+[node name="PlayerDashParticle" type="GPUParticles2D"]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_tfe1m")
+lifetime = 0.4
+one_shot = true
+script = ExtResource("1_ntrmu")

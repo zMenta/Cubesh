@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var current_weapon : Weapon
+@export var dash_particle_scene : PackedScene
+
 @onready var animation := $AnimationPlayer
 @onready var weapon_slot := $WeaponSlot
 
@@ -37,6 +39,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func _dash(direction: Vector2) -> void:
+	var particle = dash_particle_scene.instantiate()
+	add_child(particle)
 	velocity.x = move_toward(velocity.x, direction.x * DASH_SPEED, DASH_SPEED)
 	velocity.y = move_toward(velocity.y, direction.y * DASH_SPEED, DASH_SPEED)
 
