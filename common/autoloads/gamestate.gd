@@ -9,4 +9,5 @@ signal weapon_pickup(new_weapon: Weapon)
 signal health_changed(new_value: int)
 signal stamina_changed(new_value: int)
 signal create_annoucement(text: String)
+signal spawn_teleporter()
 
