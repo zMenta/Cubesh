@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=14 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
@@ -10,6 +10,43 @@
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 [ext_resource type="PackedScene" uid="uid://d2wn6iebkg5fq" path="res://ui/status_bar/status_bar.tscn" id="6_yhdsn"]
 [ext_resource type="PackedScene" uid="uid://er4kittmpl8a" path="res://ui/annoucement/announcement.tscn" id="8_ctb6j"]
+
+[sub_resource type="Animation" id="Animation_nm1i0"]
+resource_name = "intro"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ex1wy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xq7kx"]
+_data = {
+"RESET": SubResource("Animation_ex1wy"),
+"intro": SubResource("Animation_nm1i0")
+}
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
@@ -37,7 +74,27 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Annoucement" parent="UI" instance=ExtResource("8_ctb6j")]
-offset_left = -144.0
-offset_top = -110.0
-offset_right = 234.0
-offset_bottom = -78.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Special effect screen" type="Node" parent="CanvasLayer"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Special effect screen"]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_xq7kx")
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Special effect screen"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -8.0
+offset_right = 618.0
+offset_bottom = 336.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+metadata/_edit_use_anchors_ = true
