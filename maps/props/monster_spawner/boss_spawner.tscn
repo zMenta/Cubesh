@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccr0yqbbcnikk"]
+
+[ext_resource type="PackedScene" uid="uid://bgeuskoeq4st3" path="res://maps/props/monster_spawner/monster_spawner.tscn" id="1_xoa5f"]
+[ext_resource type="PackedScene" uid="uid://dow0uobpvwvb6" path="res://enemies/boss_slime.tscn" id="2_yny4g"]
+
+[node name="BossSpawner" instance=ExtResource("1_xoa5f")]
+monster = ExtResource("2_yny4g")
+
+[node name="Label" parent="." index="0"]
+text = "Boss
+"

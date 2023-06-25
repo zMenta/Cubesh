@@ -5,7 +5,7 @@ extends Node
 @onready var map := $Map
 
 var enemy_counter : int = 0 : set = _set_enemy_counter
-var map_counter : int = 0
+var map_counter : int = -1
 
 func _set_enemy_counter(new_value: int) -> void:
 	enemy_counter = new_value
@@ -23,6 +23,7 @@ func _ready() -> void:
 	Gamestate.enemy_spawned.connect(_count_enemies)
 	Gamestate.enemy_slain.connect(_enemy_defeated)
 	Gamestate.player_died.connect(_on_player_death)
+	_map_changed()
 
 
 func _add_node_to_world(node: Node) -> void:

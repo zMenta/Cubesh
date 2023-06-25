@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=11 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
+[ext_resource type="PackedScene" uid="uid://dtv44hlgiix8s" path="res://maps/map_1_4.tscn" id="2_sm7y3"]
+[ext_resource type="PackedScene" uid="uid://b8x660i5wrd6u" path="res://maps/credits_map.tscn" id="2_vtfyd"]
 [ext_resource type="PackedScene" uid="uid://dru3fsdpoi7i4" path="res://maps/map_1_2.tscn" id="3_yc5l0"]
 [ext_resource type="PackedScene" uid="uid://b176excv3o0m" path="res://maps/map_1_3.tscn" id="4_bk1wm"]
 [ext_resource type="PackedScene" uid="uid://n1x31lge7o0j" path="res://maps/map_1_1.tscn" id="4_pw1q7"]
@@ -11,11 +13,9 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
-map_pool = Array[PackedScene]([ExtResource("4_pw1q7"), ExtResource("3_yc5l0"), ExtResource("4_bk1wm")])
+map_pool = Array[PackedScene]([ExtResource("4_pw1q7"), ExtResource("3_yc5l0"), ExtResource("4_bk1wm"), ExtResource("2_sm7y3"), ExtResource("2_vtfyd")])
 
 [node name="Map" type="Node2D" parent="."]
-
-[node name="Map1_1" parent="Map" instance=ExtResource("4_pw1q7")]
 
 [node name="Player" parent="." instance=ExtResource("1_khuke")]
 
