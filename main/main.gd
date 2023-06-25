@@ -4,16 +4,26 @@ extends Node
 
 @onready var map := $Map
 
+var enemy_counter : int = 0 : set = _set_enemy_counter
 var map_counter : int = 0
+
+func _set_enemy_counter(new_value: int) -> void:
+	enemy_counter = new_value
+	if enemy_counter <= 0:
+		enemy_counter = 0
+		Gamestate.spawn_teleporter.emit()
+		Gamestate.create_annoucement.emit("Somewhere a portal has been created..")
 
 
 func _ready() -> void:
 	Gamestate.add_node_to_world.connect(_add_node_to_world)
 	Gamestate.map_exited.connect(_map_changed)
+	Gamestate.enemy_spawned.connect(_count_enemies)
+	Gamestate.enemy_slain.connect(_enemy_defeated)
 
 
 func _add_node_to_world(node: Node) -> void:
-	map.add_child(node)
+	map.add_child.call_deferred(node)
 
 
 func _map_changed() -> void:
@@ -25,3 +35,8 @@ func _map_changed() -> void:
 	map.add_child(next_map)
 
 	
+func _count_enemies() -> void:
+	enemy_counter += 1
+
+func _enemy_defeated() -> void:
+	enemy_counter -= 1

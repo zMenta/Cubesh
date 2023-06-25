@@ -10,4 +10,6 @@ signal health_changed(new_value: int)
 signal stamina_changed(new_value: int)
 signal create_annoucement(text: String)
 signal spawn_teleporter()
+signal enemy_spawned()
+signal enemy_slain()
 

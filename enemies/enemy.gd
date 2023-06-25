@@ -12,6 +12,11 @@ const DASH_SPEED = 230
 
 var target : Node2D
 
+
+func _ready() -> void:
+	Gamestate.enemy_spawned.emit()
+
+
 func _physics_process(_delta: float) -> void:
 	if target == null:
 		velocity.x = move_toward(velocity.x, 0, FRICTION)
@@ -56,6 +61,7 @@ func _on_attack_cooldown_timeout() -> void:
 
 
 func _on_component_health_died() -> void:
+	Gamestate.enemy_slain.emit()
 	queue_free()
 
 
