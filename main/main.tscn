@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://pupvaq8lygih"]
+[gd_scene load_steps=9 format=3 uid="uid://pupvaq8lygih"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_df2tq"]
 [ext_resource type="PackedScene" uid="uid://c7easjs18gum6" path="res://player/player.tscn" id="1_khuke"]
 [ext_resource type="PackedScene" uid="uid://dru3fsdpoi7i4" path="res://maps/map_1_2.tscn" id="3_yc5l0"]
+[ext_resource type="PackedScene" uid="uid://b176excv3o0m" path="res://maps/map_1_3.tscn" id="4_bk1wm"]
 [ext_resource type="PackedScene" uid="uid://n1x31lge7o0j" path="res://maps/map_1_1.tscn" id="4_pw1q7"]
 [ext_resource type="PackedScene" uid="uid://q3clhfv747at" path="res://ui/tooltip/tooltip.tscn" id="5_p63od"]
 [ext_resource type="PackedScene" uid="uid://d2wn6iebkg5fq" path="res://ui/status_bar/status_bar.tscn" id="6_yhdsn"]
@@ -10,7 +11,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_df2tq")
-map_pool = Array[PackedScene]([ExtResource("4_pw1q7"), ExtResource("3_yc5l0")])
+map_pool = Array[PackedScene]([ExtResource("4_pw1q7"), ExtResource("3_yc5l0"), ExtResource("4_bk1wm")])
 
 [node name="Map" type="Node2D" parent="."]
 
@@ -36,3 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Annoucement" parent="UI" instance=ExtResource("8_ctb6j")]
+offset_left = -144.0
+offset_top = -110.0
+offset_right = 234.0
+offset_bottom = -78.0
