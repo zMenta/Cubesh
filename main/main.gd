@@ -47,4 +47,4 @@ func _on_player_death() -> void:
 		node.queue_free()
 	
 	var next_map : TileMap = map_pool[map_counter].instantiate()
-	map.add_child(next_map)
+	map.add_child.call_deferred(next_map)

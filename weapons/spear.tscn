@@ -13,7 +13,7 @@ stun_time = 0.2
 size = Vector2(6, 31)
 
 [node name="Spear" instance=ExtResource("1_jox80")]
-attack_speed_scale = 1.2
+attack_speed_scale = 1.1
 
 [node name="ComponentHurtbox" parent="." index="0"]
 attack = SubResource("Resource_md25g")
