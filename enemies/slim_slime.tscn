@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://k85ee55wkrau"]
+
+[ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="1_p7n52"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="2_x8tyf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahksy"]
+radius = 450.0
+
+[sub_resource type="Resource" id="Resource_fk4an"]
+script = ExtResource("2_x8tyf")
+damage = 5
+knockback = 10
+stun_time = 0.2
+
+[node name="SlimSlime" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+
+[node name="Slime" parent="." instance=ExtResource("1_p7n52")]
+speed = 15
+dash_speed = 280
+on_detection_cooldown = 0.8
+attack_cooldown = 4.0
+
+[node name="ComponentHealth" parent="Slime" index="0"]
+max_health = 8
+
+[node name="CollisionShape2D" parent="Slime/DetectionZone" index="0"]
+shape = SubResource("CircleShape2D_ahksy")
+
+[node name="ComponentHurtbox" parent="Slime" index="6"]
+attack = SubResource("Resource_fk4an")
+
+[editable path="Slime"]
