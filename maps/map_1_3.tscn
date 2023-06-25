@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bagcfyd0a4hx0" path="res://maps/base_tile_map.tscn" id="1_l5fjh"]
 [ext_resource type="PackedScene" uid="uid://c88pjy86wrme1" path="res://maps/props/item_drop/item_drop.tscn" id="2_dhxhs"]
-[ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="3_4i28f"]
+[ext_resource type="PackedScene" uid="uid://enb2cglwjek0" path="res://weapons/spear.tscn" id="3_df0ao"]
 [ext_resource type="PackedScene" uid="uid://hyop2hsmccnt" path="res://weapons/sharp_dagger.tscn" id="4_3nj0y"]
 
 [node name="Map1_3" instance=ExtResource("1_l5fjh")]
@@ -11,10 +11,10 @@ layer_1/tile_data = PackedInt32Array(-655350, 0, 65536, -655349, 0, 65536, -5898
 layer_2/tile_data = PackedInt32Array(4128781, 1, 262144, 4128789, 1, 262144, 3211271, 1, 131072, 3473412, 1, 131072, 3211265, 1, 131072, 851992, 1, 458752, 655384, 1, 458752, 786439, 1, 458752, 458767, 1, 393216, 131079, 1, 458752, 1769463, 1, 131072, 2293759, 1, 131072, 2031611, 1, 131072, 2097189, 1, 131072, 3014693, 1, 131072, 2490401, 1, 393216, 3801102, 1, 393216, 3866644, 1, 393216, 1572879, 1, 131072, 1769487, 1, 262144)
 layer_3/tile_data = PackedInt32Array(-524276, 1, 65536, 2359347, 1, 327680, 1310735, 1, 327680, 3407888, 1, 327680, 1835003, 1, 327680)
 
-[node name="ItemDrop" parent="." index="1" instance=ExtResource("2_dhxhs")]
+[node name="ItemDrop" parent="." index="0" instance=ExtResource("2_dhxhs")]
 position = Vector2(822, 637)
-weapon_scene = ExtResource("3_4i28f")
+weapon_scene = ExtResource("3_df0ao")
 
-[node name="ItemDrop2" parent="." index="2" instance=ExtResource("2_dhxhs")]
+[node name="ItemDrop2" parent="." index="1" instance=ExtResource("2_dhxhs")]
 position = Vector2(-179, 929)
 weapon_scene = ExtResource("4_3nj0y")
