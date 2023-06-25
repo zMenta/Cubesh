@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://hyop2hsmccnt"]
+
+[ext_resource type="PackedScene" uid="uid://cmqblje6fqvln" path="res://weapons/weapon.tscn" id="1_4xsmo"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="2_xnmeh"]
+
+[sub_resource type="Resource" id="Resource_6os6c"]
+script = ExtResource("2_xnmeh")
+damage = 9
+knockback = 15
+stun_time = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpajb"]
+size = Vector2(6, 11)
+
+[node name="SharpDagger" instance=ExtResource("1_4xsmo")]
+modulate = Color(0.901961, 0.901961, 0.901961, 1)
+position = Vector2(0, 8)
+region_rect = Rect2(48, 0, 16, 16)
+attack_speed_scale = 2.5
+
+[node name="ComponentHurtbox" parent="." index="0"]
+attack = SubResource("Resource_6os6c")
+
+[node name="CollisionShape2D" parent="ComponentHurtbox" index="0"]
+shape = SubResource("RectangleShape2D_cpajb")
