@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://qokutq86o6vq"]
+
+[ext_resource type="PackedScene" uid="uid://bgeuskoeq4st3" path="res://maps/props/monster_spawner/monster_spawner.tscn" id="1_bkk46"]
+[ext_resource type="PackedScene" uid="uid://jmpmpvr476he" path="res://enemies/fat_slime.tscn" id="2_2avxf"]
+
+[node name="FatSlimeSpawner" instance=ExtResource("1_bkk46")]
+monster = ExtResource("2_2avxf")
+
+[node name="Label" parent="." index="0"]
+text = "FatSlime
+"

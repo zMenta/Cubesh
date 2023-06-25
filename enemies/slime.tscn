@@ -113,7 +113,7 @@ script = ExtResource("1_o47hr")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("1_odc5l")
-max_health = 30
+max_health = 28
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g08wa")

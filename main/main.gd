@@ -9,10 +9,12 @@ var map_counter : int = 0
 
 func _set_enemy_counter(new_value: int) -> void:
 	enemy_counter = new_value
-	if enemy_counter <= 0:
+	if enemy_counter == 0:
 		enemy_counter = 0
 		Gamestate.spawn_teleporter.emit()
 		Gamestate.create_annoucement.emit("Somewhere a portal has been created..")
+	elif enemy_counter == -1:
+		enemy_counter = 0
 
 
 func _ready() -> void:
@@ -43,6 +45,7 @@ func _enemy_defeated() -> void:
 	enemy_counter -= 1
 
 func _on_player_death() -> void:
+	enemy_counter = -1
 	for node in map.get_children():
 		node.queue_free()
 	

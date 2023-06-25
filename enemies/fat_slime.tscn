@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://jmpmpvr476he"]
+
+[ext_resource type="PackedScene" uid="uid://doa2egg8a8oi3" path="res://enemies/slime.tscn" id="1_0mq03"]
+[ext_resource type="Script" path="res://weapons/attack.gd" id="2_ho312"]
+
+[sub_resource type="Resource" id="Resource_wsuw1"]
+script = ExtResource("2_ho312")
+damage = 20
+knockback = 10
+stun_time = 0.2
+
+[node name="FatSlime" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Slime" parent="." instance=ExtResource("1_0mq03")]
+speed = 5
+dash_speed = 180
+on_detection_cooldown = 3.0
+attack_cooldown = 4.0
+
+[node name="ComponentHealth" parent="Slime" index="0"]
+max_health = 50
+
+[node name="ComponentHurtbox" parent="Slime" index="6"]
+attack = SubResource("Resource_wsuw1")
+
+[editable path="Slime"]

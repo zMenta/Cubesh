@@ -36,7 +36,3 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Annoucement" parent="UI" instance=ExtResource("8_ctb6j")]
-offset_left = -144.0
-offset_top = -110.0
-offset_right = 234.0
-offset_bottom = -78.0

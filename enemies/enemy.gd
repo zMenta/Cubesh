@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 10
 const ACCELERATION = 2
 const FRICTION = 10
-const DASH_SPEED = 230
+
+@export var speed = 10
+@export var dash_speed = 230
 
 @export var on_detection_cooldown : float = 1.0
 @export var attack_cooldown : float = 3.0
@@ -25,8 +26,8 @@ func _physics_process(_delta: float) -> void:
 
 	look_at(target.global_position)
 	var direction = global_position.direction_to(target.global_position)
-	velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION)
-	velocity.y = move_toward(velocity.y, direction.y * SPEED, ACCELERATION)
+	velocity.x = move_toward(velocity.x, direction.x * speed, ACCELERATION)
+	velocity.y = move_toward(velocity.y, direction.y * speed, ACCELERATION)
 	move_and_slide()
 
 
@@ -37,8 +38,8 @@ func _dash() -> void:
 	hurtbox_shape.disabled = false
 	var timer = get_tree().create_timer(0.7)
 	var direction = global_position.direction_to(target.global_position)
-	velocity.x = move_toward(velocity.x, direction.x * DASH_SPEED, DASH_SPEED)
-	velocity.y = move_toward(velocity.y, direction.y * DASH_SPEED, DASH_SPEED)
+	velocity.x = move_toward(velocity.x, direction.x * dash_speed, dash_speed)
+	velocity.y = move_toward(velocity.y, direction.y * dash_speed, dash_speed)
 	await timer.timeout
 	hurtbox_shape.disabled = true
 
