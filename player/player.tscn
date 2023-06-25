@@ -140,7 +140,7 @@ dash_particle_scene = ExtResource("5_f04uu")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("2_l0m5d")
-max_health = 80
+max_health = 40
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ia72d")

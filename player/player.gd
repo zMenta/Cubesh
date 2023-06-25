@@ -58,7 +58,9 @@ func _disable_weapon_collision() -> void:
 
 
 func _on_component_health_died() -> void:
-	print("died")
+	Gamestate.create_annoucement.emit("You have been defeated, you may try again")
+	Gamestate.player_died.emit()
+	$ComponentHealth.restore($ComponentHealth.max_health)
 
 
 func _pickup_weapon(new_weapon: Weapon) -> void:

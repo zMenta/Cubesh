@@ -12,4 +12,5 @@ signal create_annoucement(text: String)
 signal spawn_teleporter()
 signal enemy_spawned()
 signal enemy_slain()
+signal player_died()
 

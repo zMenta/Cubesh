@@ -18,7 +18,7 @@ layer_3/tile_data = PackedInt32Array(-458733, 1, 65536, 2621475, 1, 131072, 2621
 position = Vector2(-459, 432)
 weapon_scene = ExtResource("3_y8baq")
 
-[node name="AnnounceWhenEntered" parent="." index="20" instance=ExtResource("4_n7imv")]
+[node name="AnnounceWhenEntered" parent="." index="1" instance=ExtResource("4_n7imv")]
 position = Vector2(311, 19)
 annoucement = "Now... slay some more"
 

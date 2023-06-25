@@ -20,6 +20,7 @@ func _ready() -> void:
 	Gamestate.map_exited.connect(_map_changed)
 	Gamestate.enemy_spawned.connect(_count_enemies)
 	Gamestate.enemy_slain.connect(_enemy_defeated)
+	Gamestate.player_died.connect(_on_player_death)
 
 
 func _add_node_to_world(node: Node) -> void:
@@ -40,3 +41,10 @@ func _count_enemies() -> void:
 
 func _enemy_defeated() -> void:
 	enemy_counter -= 1
+
+func _on_player_death() -> void:
+	for node in map.get_children():
+		node.queue_free()
+	
+	var next_map : TileMap = map_pool[map_counter].instantiate()
+	map.add_child(next_map)
