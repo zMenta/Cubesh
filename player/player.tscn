@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1_hmwl6"]
 [ext_resource type="Script" path="res://common/components/component_health.gd" id="2_l0m5d"]
 [ext_resource type="Texture2D" uid="uid://djmif1cdtrbmq" path="res://common/assets.png" id="2_p3d7h"]
-[ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="4_n1gm4"]
 [ext_resource type="Script" path="res://common/components/component_hitbox.gd" id="5_72g3u"]
+[ext_resource type="PackedScene" uid="uid://bhim2ad6ehmf" path="res://player/player_dash_particle.tscn" id="5_f04uu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ia72d"]
 radius = 8.5
@@ -133,10 +133,10 @@ _data = {
 "thrust_attack": SubResource("Animation_0qvry")
 }
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("current_weapon")]
+[node name="Player" type="CharacterBody2D"]
 collision_mask = 6
 script = ExtResource("1_hmwl6")
-current_weapon = NodePath("WeaponSlot/Sword")
+dash_particle_scene = ExtResource("5_f04uu")
 
 [node name="ComponentHealth" type="Node" parent="."]
 script = ExtResource("2_l0m5d")
@@ -155,8 +155,6 @@ region_rect = Rect2(0, 0, 16, 16)
 position = Vector2(11, 13)
 rotation = -2.84136
 
-[node name="Sword" parent="WeaponSlot" instance=ExtResource("4_n1gm4")]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_g8hwb")
@@ -171,5 +169,7 @@ health = NodePath("../ComponentHealth")
 shape = SubResource("CircleShape2D_ia72d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerDashParticle" parent="." instance=ExtResource("5_f04uu")]
 
 [connection signal="died" from="ComponentHealth" to="." method="_on_component_health_died"]
