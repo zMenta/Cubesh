@@ -1,4 +1,28 @@
-[gd_scene format=3 uid="uid://d2wn6iebkg5fq"]
+[gd_scene load_steps=3 format=3 uid="uid://d2wn6iebkg5fq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqsxo"]
+bg_color = Color(0.0313726, 0.0196078, 0.0196078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.811765, 0.811765, 0.811765, 0.921569)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhxt7"]
+bg_color = Color(0.588235, 0.0235294, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.0315, 0.07335, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="StatusBar" type="MarginContainer"]
 anchors_preset = 15
@@ -12,237 +36,14 @@ theme_override_constants/margin_top = 4
 [node name="StatusBar" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Health" type="HBoxContainer" parent="StatusBar"]
-layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="ColorRect" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect9" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect10" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect11" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect12" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect13" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect14" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect15" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect16" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect17" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect18" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect19" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect20" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect21" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect22" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect23" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect24" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect25" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect26" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect27" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect28" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect29" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect30" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect31" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect32" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect33" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect34" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect35" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect36" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect37" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect38" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect39" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect40" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect41" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="ColorRect42" type="ColorRect" parent="StatusBar/Health"]
-custom_minimum_size = Vector2(5, 5)
-layout_mode = 2
-color = Color(0.592157, 0, 0.168627, 1)
-
-[node name="Stamina" type="VBoxContainer" parent="StatusBar"]
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="StatusBar/Stamina"]
-custom_minimum_size = Vector2(8, 8)
+[node name="ProgressBar" type="ProgressBar" parent="StatusBar"]
+custom_minimum_size = Vector2(80, 8)
 layout_mode = 2
 size_flags_horizontal = 0
-color = Color(0.74978, 0.74978, 0.74978, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="StatusBar/Stamina"]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 0
-color = Color(0.74978, 0.74978, 0.74978, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="StatusBar/Stamina"]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 0
-color = Color(0.74978, 0.74978, 0.74978, 1)
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_pqsxo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nhxt7")
+max_value = 40.0
+step = 1.0
+value = 30.0
+show_percentage = false
