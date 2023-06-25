@@ -1,12 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://n1x31lge7o0j"]
+[gd_scene load_steps=5 format=3 uid="uid://n1x31lge7o0j"]
 
 [ext_resource type="PackedScene" uid="uid://bagcfyd0a4hx0" path="res://maps/base_tile_map.tscn" id="1_iates"]
 [ext_resource type="PackedScene" uid="uid://c88pjy86wrme1" path="res://maps/props/item_drop/item_drop.tscn" id="2_xt4i6"]
 [ext_resource type="PackedScene" uid="uid://coo84ripa320" path="res://maps/props/announce_when_entered/announce_when_entered.tscn" id="3_6kwwm"]
-[ext_resource type="PackedScene" uid="uid://dfkryixlfcu3x" path="res://weapons/axe.tscn" id="3_a5y7q"]
-[ext_resource type="PackedScene" uid="uid://enb2cglwjek0" path="res://weapons/spear.tscn" id="4_kkg5j"]
-[ext_resource type="PackedScene" uid="uid://hyop2hsmccnt" path="res://weapons/sharp_dagger.tscn" id="5_3se34"]
-[ext_resource type="PackedScene" uid="uid://c6g53qb86u43r" path="res://weapons/sword.tscn" id="6_fjrg6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra2a7"]
 size = Vector2(37, 59)
@@ -50,23 +46,7 @@ text = "Press 'spacebar' to dash
 [node name="ItemDrop" parent="." index="4" instance=ExtResource("2_xt4i6")]
 position = Vector2(-727, 25)
 
-[node name="ItemDrop2" parent="." index="5" instance=ExtResource("2_xt4i6")]
-position = Vector2(-779, -15)
-weapon_scene = ExtResource("3_a5y7q")
-
-[node name="ItemDrop3" parent="." index="6" instance=ExtResource("2_xt4i6")]
-position = Vector2(-679, -14)
-weapon_scene = ExtResource("4_kkg5j")
-
-[node name="ItemDrop4" parent="." index="7" instance=ExtResource("2_xt4i6")]
-position = Vector2(-683, 56)
-weapon_scene = ExtResource("5_3se34")
-
-[node name="ItemDrop5" parent="." index="8" instance=ExtResource("2_xt4i6")]
-position = Vector2(-778, 55)
-weapon_scene = ExtResource("6_fjrg6")
-
-[node name="AnnounceWhenEntered" parent="." index="9" instance=ExtResource("3_6kwwm")]
+[node name="AnnounceWhenEntered" parent="." index="5" instance=ExtResource("3_6kwwm")]
 position = Vector2(-139, 20)
 annoucement = "Slay all enemies"
 
