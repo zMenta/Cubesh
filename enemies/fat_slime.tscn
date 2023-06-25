@@ -10,7 +10,7 @@ knockback = 10
 stun_time = 0.2
 
 [node name="FatSlime" type="Node2D"]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Slime" parent="." instance=ExtResource("1_0mq03")]
 speed = 5
