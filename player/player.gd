@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var current_weapon : Weapon
 @export var dash_particle_scene : PackedScene

@@ -16,7 +16,8 @@ func take_damage(attack: Attack) -> void:
 	_create_damage_taken_effect()
 	_create_damage_number(str(attack.damage))
 	current_health = clampi(current_health - attack.damage, 0, max_health)
-	Gamestate.health_changed.emit(current_health)
+	if owner is Player:
+		Gamestate.health_changed.emit(current_health)
 	if current_health <= 0:
 		died.emit()
 
@@ -25,7 +26,8 @@ func take_damage(attack: Attack) -> void:
 func restore(amount: int) -> void:
 	current_health = clampi(current_health + amount, 0, max_health)
 	_create_damage_number("+" + str(amount))
-	Gamestate.health_changed.emit(current_health)
+	if owner is Player:
+		Gamestate.health_changed.emit(current_health)
 
 
 func _create_damage_taken_effect() -> void:

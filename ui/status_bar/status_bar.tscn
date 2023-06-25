@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2wn6iebkg5fq"]
+[gd_scene load_steps=4 format=3 uid="uid://d2wn6iebkg5fq"]
+
+[ext_resource type="Script" path="res://ui/status_bar/HealthBar.gd" id="1_eaejx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqsxo"]
 bg_color = Color(0.0313726, 0.0196078, 0.0196078, 1)
@@ -36,7 +38,7 @@ theme_override_constants/margin_top = 4
 [node name="StatusBar" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="StatusBar"]
+[node name="HealthBar" type="ProgressBar" parent="StatusBar"]
 custom_minimum_size = Vector2(80, 8)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -45,5 +47,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_pqsxo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_nhxt7")
 max_value = 40.0
 step = 1.0
-value = 30.0
+value = 40.0
 show_percentage = false
+script = ExtResource("1_eaejx")
