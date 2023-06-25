@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://coo84ripa320"]
+
+[ext_resource type="Script" path="res://maps/props/announce_when_entered/announce_when_entered.gd" id="1_iqfu6"]
+
+[node name="AnnounceWhenEntered" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_iqfu6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
