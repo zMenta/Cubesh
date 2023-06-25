@@ -16,7 +16,6 @@ map_pool = Array[PackedScene]([ExtResource("2_r367f"), ExtResource("3_yc5l0")])
 [node name="Map" type="Node2D" parent="."]
 
 [node name="Map1_1" parent="Map" instance=ExtResource("4_pw1q7")]
-layer_3/tile_data = PackedInt32Array(917505, 1, 131072, 589837, 1, 131072, 131050, 1, 131072, 131009, 1, 65536, 458753, 1, 131072, 1245197, 1, 131072, 1966098, 1, 327680, 131017, 1, 327680)
 
 [node name="Player" parent="." instance=ExtResource("1_khuke")]
 
