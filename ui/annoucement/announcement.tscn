@@ -1,13 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://er4kittmpl8a"]
+[gd_scene load_steps=5 format=3 uid="uid://er4kittmpl8a"]
 
 [ext_resource type="Script" path="res://ui/annoucement/announcement.gd" id="1_fa7yb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oywsd"]
-bg_color = Color(0.168627, 0.168627, 0.168627, 0.933333)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
 
 [sub_resource type="Animation" id="Animation_ogsrk"]
 resource_name = "default"
@@ -142,24 +135,25 @@ _data = {
 "default": SubResource("Animation_ogsrk")
 }
 
-[node name="Annoucement" type="Panel"]
+[node name="Annoucement" type="Label"]
 visible = false
-offset_left = 176.0
-offset_top = 70.0
-offset_right = 485.0
-offset_bottom = 102.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_oywsd")
-script = ExtResource("1_fa7yb")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_right = 298.0
-offset_bottom = 31.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -110.0
+offset_right = 234.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 20
 text = "Somewhere a portal has been created.."
+script = ExtResource("1_fa7yb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

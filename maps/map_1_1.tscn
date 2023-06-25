@@ -46,7 +46,7 @@ text = "Press 'spacebar' to dash
 [node name="ItemDrop" parent="." index="4" instance=ExtResource("2_xt4i6")]
 position = Vector2(-727, 25)
 
-[node name="AnnounceWhenEntered" parent="." index="14" instance=ExtResource("3_6kwwm")]
+[node name="AnnounceWhenEntered" parent="." index="5" instance=ExtResource("3_6kwwm")]
 position = Vector2(-139, 20)
 annoucement = "Slay all enemies"
 
