@@ -1,2 +1,2 @@
 # Cubesh
-A simple roguelike game.
+A simple and short adventure game.
